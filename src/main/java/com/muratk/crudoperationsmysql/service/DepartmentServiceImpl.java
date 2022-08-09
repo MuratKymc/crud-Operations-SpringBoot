@@ -34,6 +34,11 @@ public class DepartmentServiceImpl implements DepartmentService{
 		return (List<Department>) departmentRepository.findAll();
 	}
 	
+	@Override
+	public Department getOneDepartment(Long id) {
+		return departmentRepository.findByDepartmentId(id);
+	}
+	
 	//Update operations
 	@Override
 	public Department updateDepartment(Department department, Long departmentId) {

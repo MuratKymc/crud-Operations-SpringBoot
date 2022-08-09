@@ -12,6 +12,9 @@ public interface DepartmentService {
 	//Read operations
 	List<Department> fetchDepartmentList();
 	
+	//Read one
+	Department getOneDepartment(Long id);
+	
 	//Update operations
 	Department updateDepartment(Department department, Long departmentId);
 	

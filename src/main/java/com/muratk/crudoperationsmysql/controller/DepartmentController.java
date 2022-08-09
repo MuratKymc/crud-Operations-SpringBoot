@@ -28,6 +28,12 @@ public class DepartmentController {
 		return departmentService.fetchDepartmentList();
 	}
 	
+	//Read one
+	@GetMapping("/departments/{id}")
+	public Department getOneDepartment(Long id){
+		return departmentService.getOneDepartment(id);
+	}
+	
 	//Update operation
 	@PutMapping("/departments/{id}")
 	public Department updateDepartment(@RequestBody Department department,
