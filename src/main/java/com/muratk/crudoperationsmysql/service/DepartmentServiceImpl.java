@@ -68,4 +68,12 @@ public class DepartmentServiceImpl implements DepartmentService{
 		departmentRepository.deleteById(departmentId);
 		
 	}
+	
+	//Delete All
+	@Override
+	public void deleteAllDepartments() {
+		
+		departmentRepository.deleteAll();
+		
+	}
 }

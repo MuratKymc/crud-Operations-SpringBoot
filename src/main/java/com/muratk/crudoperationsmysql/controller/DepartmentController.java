@@ -48,5 +48,10 @@ public class DepartmentController {
 		return "Delete Succesfully";
 	}
 	
+	@DeleteMapping("/departments")
+	public String deleteAllDepartments(){
+		departmentService.deleteAllDepartments();
+		return "DELETE SUCCESFULLY";
+	}
 }
 

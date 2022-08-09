@@ -21,5 +21,7 @@ public interface DepartmentService {
 	//Delete operations
 	void deleteDepartmentById(Long departmentId);
 	
+	void deleteAllDepartments();
+	
 	
 }
