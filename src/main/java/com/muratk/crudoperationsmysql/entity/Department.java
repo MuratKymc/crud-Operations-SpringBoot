@@ -4,9 +4,6 @@ package com.muratk.crudoperationsmysql.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "department")
@@ -14,21 +11,19 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@EqualsAndHashCode
 public class Department {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long departmentId;
 	
-	@NotNull
+	@Column(name = "department_name", nullable = false)
 	private String departmentName;
-	@NotNull
-	@Min(22)
+	
+	@Column(name = "department_address", nullable = false)
 	private String departmentAddress;
-	@NotNull
-	@NotBlank
+	
+	@Column(name = "department_code", nullable = false)
 	private String departmentCode;
 	
-
 }
