@@ -30,8 +30,6 @@ class DepartmentRepositoryTest {
 	private DepartmentRepository departmentRepository;
 	
 	@Test
-	@Order(1)
-	@Rollback(value = false)
 	public void saveDepartmentTest(){
 		
 		Department department = Department
@@ -43,15 +41,15 @@ class DepartmentRepositoryTest {
 		
 		departmentRepository.save(department);
 		
-		Assertions.assertThat(department.getDepartmentId()).isEqualTo(1L);
+		Assertions.assertThat(department.getDepartmentId()).isNotNull();
 	}
 	
 	@Test
 	@Order(2)
-	void findByDepartmentId() {
-		Department department = departmentRepository.findByDepartmentId(1L);
+	void findByDepartmentIdTest() {
+		Department department = departmentRepository.findByDepartmentId(5L);
 		
-		Assertions.assertThat(department.getDepartmentId()).isEqualTo(1L);
+		Assertions.assertThat(department.getDepartmentId()).isEqualTo(5L);
 	}
 	
 	
@@ -69,7 +67,7 @@ class DepartmentRepositoryTest {
 	@Order(4)
 	@Rollback(value = false)
 	public void updateDepartmentTest(){
-		Department department = departmentRepository.findByDepartmentId(1L);
+		Department department = departmentRepository.findByDepartmentId(2L);
 		
 		department.setDepartmentCode("NewTestCode");
 		
@@ -84,7 +82,7 @@ class DepartmentRepositoryTest {
 	@Rollback(value = false)
 	public void deleteDepartmentTest(){
 		
-		Department department = departmentRepository.findByDepartmentId(1L);
+		Department department = departmentRepository.findByDepartmentId(2L);
 		
 		departmentRepository.delete(department);
 		

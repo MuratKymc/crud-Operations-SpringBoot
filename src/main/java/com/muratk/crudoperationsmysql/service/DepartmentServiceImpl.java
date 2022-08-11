@@ -12,7 +12,7 @@ import java.util.Objects;
 @Service
 public class DepartmentServiceImpl implements DepartmentService{
 	
-	@Autowired
+	
 	private DepartmentRepository departmentRepository;
 	
 	
